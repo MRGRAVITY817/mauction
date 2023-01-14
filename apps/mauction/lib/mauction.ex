@@ -1,7 +1,7 @@
 defmodule Mauction do
-  alias Mauction.{FakeRepo, Item}
+  alias Mauction.Item
 
-  @repo FakeRepo
+  @repo Mauction.Repo
   def list_items do
     @repo.all(Item)
   end
