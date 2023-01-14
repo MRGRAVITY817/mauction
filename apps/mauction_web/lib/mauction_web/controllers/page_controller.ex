@@ -2,6 +2,7 @@ defmodule MauctionWeb.PageController do
   use MauctionWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    items = Mauction.list_items()
+    render(conn, "index.html", items: items)
   end
 end
