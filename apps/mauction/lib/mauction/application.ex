@@ -7,9 +7,12 @@ defmodule Mauction.Application do
 
   @impl true
   def start(_type, _args) do
+    # Workers in this list will be `supervised`, which means
+    # that when the process is crashed, the supervisor will
+    # bring it back up.
     children = [
       # Starts a worker by calling: Mauction.Worker.start_link(arg)
-      # {Mauction.Worker, arg}
+      {Mauction.Repo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

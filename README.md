@@ -2,7 +2,8 @@
 
 ## Commands
 
-- Compile Project: `mix compile`
+- Compile project: `mix compile`
+- Interact with project: `iex -S mix`
 - Start Phoenix server: `mix phx.server`
 - Setup database: `mix ecto.create`
 - Create database migration file: `mix ecto.gen.migration <migration_name>`
