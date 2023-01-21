@@ -17,7 +17,14 @@ defmodule MauctionWeb.Router do
   scope "/", MauctionWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/items", ItemController, :index
+    get "/items/new", ItemController, :new
+    post "/items", ItemController, :create
+    get "/items/:id", ItemController, :show
+    get "/items/:id/edit", ItemController, :edit
+    patch "/items/:id", ItemController, :update
+    put "/items/:id", ItemController, :update
+    delete "/items/:id", ItemController, :delete
   end
 
   # Other scopes may use custom stacks.
