@@ -1,4 +1,5 @@
 defmodule MauctionWeb.Router do
+  alias MauctionWeb.PageController
   use MauctionWeb, :router
 
   pipeline :browser do
@@ -17,14 +18,8 @@ defmodule MauctionWeb.Router do
   scope "/", MauctionWeb do
     pipe_through :browser
 
-    get "/items", ItemController, :index
-    get "/items/new", ItemController, :new
-    post "/items", ItemController, :create
-    get "/items/:id", ItemController, :show
-    get "/items/:id/edit", ItemController, :edit
-    patch "/items/:id", ItemController, :update
-    put "/items/:id", ItemController, :update
-    delete "/items/:id", ItemController, :delete
+    get "/", PageController, :index
+    resources "/items", ItemController, only: [:index]
   end
 
   # Other scopes may use custom stacks.
