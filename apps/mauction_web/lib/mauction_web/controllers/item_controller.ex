@@ -5,4 +5,9 @@ defmodule MauctionWeb.ItemController do
     items = Mauction.list_items()
     render(conn, "index.html", items: items)
   end
+
+  def show(conn, %{"id" => id}) do
+    item = Mauction.get_item(id)
+    render(conn, "show.html", item: item)
+  end
 end
