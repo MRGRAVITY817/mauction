@@ -1,5 +1,4 @@
 defmodule MauctionWeb.Router do
-  alias MauctionWeb.PageController
   use MauctionWeb, :router
 
   pipeline :browser do
