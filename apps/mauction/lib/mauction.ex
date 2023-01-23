@@ -16,8 +16,8 @@ defmodule Mauction do
   end
 
   def insert_item(attrs) do
-    Item
-    |> struct(attrs)
+    %Item{}
+    |> Item.changeset(attrs)
     |> @repo.insert()
   end
 
