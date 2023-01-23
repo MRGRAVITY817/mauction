@@ -10,4 +10,9 @@ defmodule MauctionWeb.ItemController do
     item = Mauction.get_item(id)
     render(conn, "show.html", item: item)
   end
+
+  def new(conn, _params) do
+    item = Mauction.new_item()
+    render(conn, "new.html", item: item)
+  end
 end
